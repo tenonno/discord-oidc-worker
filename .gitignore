@@ -1,3 +1,8 @@
 node_modules/
 config.json
 .wrangler/
+.dev.vars*
+.env*
+.audit-*.json
+keys.local.json
+wrangler.local.toml

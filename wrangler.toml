@@ -1,7 +1,18 @@
 name = "discord-oidc"
 main = "worker.js"
-compatibility_date = "2022-12-24"
+compatibility_date = "2026-11-06"
 
 kv_namespaces = [
-  { binding = "KV", id = "0b9abda82acf461c8d4ecda656217e20", preview_id = "b43c22430b5240dea89cd6cc350d3946" }
+  { binding = "KV", id = "00000000000000000000000000000000" }
 ]
+
+[vars]
+DISCORD_CLIENT_ID = "000000000000000000"
+DISCORD_REDIRECT_URI = "https://YOURNAME.cloudflareaccess.com/cdn-cgi/access/callback"
+OIDC_ISSUER = "https://discord-oidc.YOURNAME.workers.dev"
+SERVERS_TO_CHECK_ROLES_FOR = "[]"
+
+# Never place DISCORD_CLIENT_SECRET here. Use `wrangler secret put`.
+# Explicitly disable request logs: authorization URLs contain state parameters.
+[observability]
+enabled = false
